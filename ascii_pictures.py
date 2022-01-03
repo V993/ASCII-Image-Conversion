@@ -1,7 +1,7 @@
 
 from os import major
 from typing import NewType, Tuple
-from PIL import Image
+from PIL import Image, ImageOps
 from sys import argv
 from termcolor import colored, cprint
 import termcolor
@@ -10,8 +10,9 @@ MAXIMUM_CHANNELS = 255 * 4
 
 Pixel = NewType("Pixel", Tuple[int,int,int,int])
 
-CHARACTERS = ('  ', '. ', '° ', '* ', 'o ', ') ', '/ ', '0 ', '$ ', '@ ')
-CHARACTERS_PACKED = ('  ', '..', '°°', '**', 'oo', '))', '//', '00', '$$', '@@')
+CHARACTERS =        ('  ', ', ', '; ', '* ', 'o ', ') ', '/ ', '0 ', '$ ', '@ ')
+CHARACTERS_PACKED = ('  ', ',,', ';;', '**', 'oo', '))', '//', '00', '$$', '@@')
+BINARY = ('1','0')
 
 HTML_START= """
 <!DOCTYPE html>
@@ -80,16 +81,27 @@ def display_image(size: Tuple[int, int], image_string: str, colors: str):
 
         # print with color:
         line = image_string[index:index+size[0]*2]
+        # flag = True
         for loc,c in enumerate(line):
             pixel_color = colors[loc+index]
+
+            
+            # if loc < len(line)-4 and flag:
+            #     if line[loc-3] != ' ' and line[loc-2] != ' ' and line[loc-1] != ' ' and c != ' ' \
+            #                 and line[loc+1] != ' ' and line[loc+2] != ' ' and line[loc+3] != ' ':
+            #         print('dope', end='')
+            #         loc += 4
+            #         flag = False
+            #         continue
+
             if pixel_color == '0':
-                cprint(c,'red', end='')
+                cprint(c,'red', attrs=['bold'], end='')
             if pixel_color == '1':
-                cprint(c, 'green', end='')
+                cprint(c, 'green', attrs=['bold'], end='')
             if pixel_color == '2':
-                cprint(c, 'blue', end='')
+                cprint(c, 'blue', attrs=['bold'], end='')
             elif pixel_color == '3':
-                print(c, end='')
+                print(' ', end='')
             # else:
             #     print("e ")
 
@@ -119,13 +131,16 @@ def save_html(name: str, image_string: str, size: Tuple[int,int]):
 
 def main():
     image_to_be_converted = argv[1]
-
     # convert image to 50*50 for readability
-    basewidth = 80
+    basewidth = int(argv[2])
     img = Image.open(image_to_be_converted)
     wpercent = (basewidth / float(img.size[0]))
     hsize = int((float(img.size[1]) * float(wpercent)))
     img = img.resize((basewidth, hsize), Image.ANTIALIAS)
+
+    if argv[3]:
+        if argv[3] == "invert":
+            img = ImageOps.invert(img)
 
     # img.save('resized_image.jpg')
     
