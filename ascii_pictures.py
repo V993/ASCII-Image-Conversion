@@ -147,7 +147,7 @@ def main():
     img = img.resize((basewidth, hsize), Image.ANTIALIAS)
 
     monochrome = False
-    bump = 50  # how much to bump the image down (good for phone wallpapers)
+    bump = 0  # how much to bump the image down (good for phone wallpapers)
 
     # print("LENGTH",len(argv))
     # for i,arg in enumerate(argv):
@@ -155,19 +155,19 @@ def main():
 
     if len(argv) > 3:
         print (len(argv))
-        if argv[3] == "true" or argv[3] == "True" or argv[3] == '1':
+        if argv[3].strip().lower() == "true" or argv[3] == '1':
             img = ImageOps.invert(img)
         if len(argv) > 4:
-            if argv[4].strip().lower() == "mono":
+            if argv[4].strip().lower() == "true" or argv[4] == '1':
                 monochrome = True
             if len(argv) > 5:
-                bump = argv[5]
+                bump = int(argv[5])
     else:
         print("there ain't more args")
 
     img.save('resized_image.jpg')
     
-    cprint('this should be red','red','on_blue')
+    # cprint('this should be red','red','on_blue')
 
     ascii_image_string,colors = convert_image(img)
 

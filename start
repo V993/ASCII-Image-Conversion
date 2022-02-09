@@ -2,13 +2,14 @@
 echo "parameters selected:"
 echo "     input image: $1"
 echo "     image size : $2"
-echo "     inverted   : $3"
-echo "     monocrhome : $4"
-echo "     bump       : $5"
 
-# if [ -z "$i" ]
-# then
-#     echo "this shit empty"
-# fi
+test   -n "$3" && echo "     inverted   : $3"
+test ! -n "$3" && echo "     inverted   : False "
+
+test   -n "$4" && echo "     monochome  : $4"
+test ! -n "$4" && echo "     monochome  : False"
+
+test   -n "$5" && echo "     bump       : $5"
+test ! -n "$5" && echo "     bump       : 0"
 
 python3 ascii_pictures.py $1 $2 $3 $4 $5

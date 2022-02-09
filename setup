@@ -1,0 +1,4 @@
+
+# library requirements for image conversion
+
+pip3 install pillow termcolor
