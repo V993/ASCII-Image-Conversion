@@ -87,66 +87,11 @@ With an adequately sized window, this should produce the following output (in co
                                     ,,;;;;,,,,,,         
                                     
 
-### Monochrome Sunflowers Example:
-                                
-                                
-./start test_images/sunflowers_bunch.webp 60 false true
+### RGB Sunflowers Example:
+                                                      
+./start test_images/sunflowers_bunch.webp 60
 
-                  ;;;;                                                                                                  
-              ;;**))oo;;                                                                                                
-          ,,**oo))oo))**                                                    **;;  ;;                                    
-            oooooo))oo,,          ;;      ;;                          ;;;;oo))))oooo                          ;;        
-            oooooo**;;;;      ****oo**;;,,  ,,                      ;;oo))))oooooooo;;                          ;;      
-            oooooo**;;,,      oo))oooooooo****                    ****oooooooooooo));;                                  
-            oo))oo**;;**,,  ;;))oooooooooo)),,                    **oooooo****oooo;;                                    
-            **oo;;      **  ;;))oo**oooooooooo;;                  **oooooo**oooo;;        ;;,,,,,,                      
-              ;;        ;;,,  oooooooooooo))))oo                  oooooooooooo**;;      ;;;;;;**;;                      
-            ;;;;;;;;;;    ;;  **oo))****oooo))oo                  oooooooooo**;;**;;    ;;;;**;;                        
-            ;;**;;;;;;;;  ;;;;;;**oooo;;**oo))**                  **))))))**;;;;,,;;;;  ,,;;;;                          
-              ;;**;;;;,,  ;;  ;;;;oo))oo**oooo));;                ,,;;****          ;;;;                                
-                ;;;;,,  ,,;;,,;;;;**oooooooooo));;                              ;;;;,,;;                                
-                        ;;****,,,,;;;;oooooo))**                          ,,;;;;;;;;;;;;                                
-                        **;;        ,,oooooo));;                ;;**;;****;;**;;**;;,,;;;;      ,,                      
-                      ;;;;  ,,;;;;    ;;oooooo**              **oo))oo))))oooo;;;;,,  ,,;;    ;;;;;;                    
-        ,,;;;;        ;;  ,,;;;;;;;;                      ,,**))oooooooooooo))oo        ;;    ;;;;oo**,,                
-      ,,;;;;;;;;    ;;;;    ;;;;;;;;,,                    ;;))))oooooooooooooo));;      ;;    ;;))oo))**                
-    ;;;;;;;;;;;;    ;;,,    ;;****;;**,,                ;;;;oooooooo****oooooooo)),,  ;;      oo))oooo))**              
-    ;;********    ,,;;          ;;;;;;                  **))oooooooooooooooooooo))**  ;;      oooo**oooooo;;            
-        **;;        ;;                                  **))oooooooo****oooo))oo))**;;,,  ,,;;**))oooooooo**            
-          ,,      ,,******;;**;;,,                      **))oooooooo;;;;oooooo))))));;      ;;**oo****oooo;;            
-              oo**oooo))oo))**;;;;                      **))oooo**oo**oooooooooooooo;;,,;;**;;**))****oo))**            
-              **oooooooooooo**;;;;;;,,                  ,,oooooooo**oooo**oooooooo**;;;;  ,,;;**oooooooooo;;            
-            oooooooooooooo))oo**;;;;;;                  ;;oooooooooooooooooooo))oo;;;;,,      ;;oooooo))**              
-          oooo))oooooooooo))**                        ;;;;**oo))oooooo))))oooooo))oo;;;;;;    **))oooo))**              
-          **))oooo****))oooo                          ,,******oo))oooooooooooooooo))**;;;;    ;;))))oo;;                
-          oo))oo**;;oooo**;;                              ,,;;****oo))oooooooooooooooo;;**;;    ,,oo;;                  
-        **))oooo**oo))oo;;;;;;                              ;;;;;;**oooooo****oooooooo                                  
-        **))oooooooooo;;;;;;    ;;;;;;,,                    ;;**;;;;oooooooo**oooooooo,,                                
-          **oooooo**;;**;;      ;;;;;;;;,,                  ,,,,    oooooooooooooo))**                                  
-          oo))oo))**,,,,**      ;;;;;;;;**;;                        **oooooooooooooo;;                                  
-          **oooooo      **;;    ,,;;;;;;,,                          ;;**))oooooooo****                                  
-              ;;;;;;      **                                      ,,****;;,,;;      ,,                                  
-            ;;;;;;;;,,    **                                        ,,                                                  
-          ;;**;;;;;;,,    ;;                                                                                            
-        ,,********;;    ,,**                                                          ,,                                
-              ,,          **        ;;;;  ;;                                          **,,                    ;;        
-                      ,,;;**;;,,;;;;**;;    ;;                                      ,,**;;;;                    ;;      
-                ;;,,oo))oooooo))**;;**;;                          **;;;;**;;**      ,,**;;;;;;            ,,            
-        ;;;;;;oo))))oo))oo))oooooooooo                        ;;**oo))oooo))**,,      **;;;;;;          ;;;;            
-        ;;****oo))oooooooooooooo))))oo                        ;;))oooooooooooooo;;    ;;;;;;;;        ;;**;;            
-          ;;oo))))))oooooooooooooo))oooo**;;;;                ;;oooooooooooo))oo));;      ,,          **;;;;            
-          **oooooooooooooooooooooooo))**;;****                ;;))oo**oo****oooo));;                ,,**;;;;,,          
-          oo))oooooooo********oooooooooooooo                    oooooo))**;;**oooo))**                ;;;;;;,,          
-        **))oooooooo**oooooooo**oooo))oo))**                      **oooooo****oooo))oo;;;;;;;;        ,,;;;;            
-        ,,oooooooo**oooo****oooo**oooooo))oo,,          ;;;;    ,,;;;;**oo))oooooo));;    ,,;;**;;,,                    
-        oo))oooooo**oo**;;;;**oo**oooooooo**;;        ,,**;;    ,,,,;;;;**oooooooo));;          ,,**,,                  
-        **))oooooo**oooo******oo**oooooooo****;;      ;;;;;;,,      **;;;;;;**))oo))oo      ,,;;,,,,**,,                
-      ;;**oooooooooo**oooooooo**oooooooooo**;;,,      **;;;;;;    ,,;;,,      oooo**        **;;;;,,,,**;;    ,,;;      
-          oo))oooooo****oooo****oooooo))**            ;;;;;;;;    **;;,,;;;;              ;;**;;;;,,  ;;;;;;**oooo      
-          **))oooooooooo****oooooooooooooo;;          ,,;;;;,,  ****;;;;;;;;**;;  ,,,,****;;;;;;;;    ;;;;**))oooo      
-            ;;))))oooooooooooooooooo))oo;;;;;;;;            ;;**,,  ,,;;;;    **;;;;**))))oo**;;    ,,**oooooooo**      
-            **oooooooooooooooooooo))oo**;;;;****;;******;;;;;;    ,,;;;;;;;;  ,,;;**oooooo**;;,,    oooooooooo));;      
-        ;;****;;**oooo))oooo))))oooo,,  ******;;    ,,              **;;;;;;;;**oooooooo)),,        oo))))oo))**        
-          oo**;;;;,,**;;))oooooo**      ,,**;;**,,                  ;;****;;  oo))oooo))oo          ;;******;;          
-          **,,          oo****;;                                      ,,;;****))oooooooo;;                              
-                            **                                                ;;;;;;;;    
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/47122021/153256439-91f4ee08-97b5-4326-9476-a8ea2f758e61.png">
+
+ 
+
