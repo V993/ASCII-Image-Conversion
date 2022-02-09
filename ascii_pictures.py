@@ -73,8 +73,12 @@ def convert_image(image: Image) -> str:
     return image_as_string, colors_of_image
 
 # output converted image properly:
-def display_image(size: Tuple[int, int], image_string: str, colors: str):
+def display_image(size: Tuple[int, int], image_string: str, colors: str, monochrome: bool, bump: int):
     index = 0
+
+    for i in range(bump):
+        print()
+
     for _ in range(size[1]):
         # print without color:
         # print(image_string[index:index+size[0]*2])
@@ -83,8 +87,12 @@ def display_image(size: Tuple[int, int], image_string: str, colors: str):
         line = image_string[index:index+size[0]*2]
         # flag = True
         for loc,c in enumerate(line):
-            pixel_color = colors[loc+index]
 
+            if monochrome:
+                cprint(c, 'white', attrs=['bold'],end='')
+                continue
+
+            pixel_color = colors[loc+index]
             
             # if loc < len(line)-4 and flag:
             #     if line[loc-3] != ' ' and line[loc-2] != ' ' and line[loc-1] != ' ' and c != ' ' \
@@ -138,23 +146,36 @@ def main():
     hsize = int((float(img.size[1]) * float(wpercent)))
     img = img.resize((basewidth, hsize), Image.ANTIALIAS)
 
-    if argv[3]:
-        if argv[3] == "invert":
-            img = ImageOps.invert(img)
+    monochrome = False
+    bump = 50  # how much to bump the image down (good for phone wallpapers)
 
-    # img.save('resized_image.jpg')
+    # print("LENGTH",len(argv))
+    # for i,arg in enumerate(argv):
+    #     print(i,arg)
+
+    if len(argv) > 3:
+        print (len(argv))
+        if argv[3] == "true" or argv[3] == "True" or argv[3] == '1':
+            img = ImageOps.invert(img)
+        if len(argv) > 4:
+            if argv[4].strip().lower() == "mono":
+                monochrome = True
+            if len(argv) > 5:
+                bump = argv[5]
+    else:
+        print("there ain't more args")
+
+    img.save('resized_image.jpg')
     
-    # cprint('this should be red','red','on_blue')
+    cprint('this should be red','red','on_blue')
 
     ascii_image_string,colors = convert_image(img)
 
     # uncomment to display in terminal alone:
-    display_image(img.size, ascii_image_string, colors)
+    display_image(img.size, ascii_image_string, colors, monochrome, bump)
 
     # save to html
-    save_html(image_to_be_converted, ascii_image_string, img.size)
-
-
+    # save_html(image_to_be_converted, ascii_image_string, img.size)
 
 if __name__ == "__main__":
     main()

@@ -10,5 +10,5 @@ def zoom_at(img, x, y, zoom):
     return img.resize((w, h), Image.LANCZOS)
 
 in_image = Image.open(argv[1])
-zoomed_image = zoom_at(in_image, )
+# zoomed_image = zoom_at(in_image)
 zoomed_image.save("inverted"+argv[1], quality=95)
