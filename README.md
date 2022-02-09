@@ -88,10 +88,10 @@ With an adequately sized window, this should produce the following output (in co
                                     
 
 ### RGB Sunflowers Example:
+(You'll probably want to make the font-size small for images upwards of 100 in resolution)
                                                       
-./start test_images/sunflowers_bunch.webp 60
+./start test_images/sunflowers_bunch.webp 140
 
-<img width="946" alt="image" src="https://user-images.githubusercontent.com/47122021/153256439-91f4ee08-97b5-4326-9476-a8ea2f758e61.png">
-
+<img width="1097" alt="image" src="https://user-images.githubusercontent.com/47122021/153256653-3f57639f-60ad-4912-9b62-1bf23d5dc341.png">
  
 
