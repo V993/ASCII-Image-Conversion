@@ -39,7 +39,7 @@ The only required arguments are the image and size, which will distort depending
 
 All arguments are as follows:
 
-./start [image: str] [size: int] [inverted: bool] [monochrome: bool] [bump: int]
+## ./start [image: str] [size: int] [inverted: bool] [monochrome: bool] [bump_down: int] [bump_right: int]
 
 **Inverted** and **monochrome** are set to False by default. The program works best with subjects against a black background. Images with white backgrounds can easily be converted to a black background with the **inverted** flag.
 
