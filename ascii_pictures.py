@@ -1,4 +1,5 @@
 
+from multiprocessing import BoundedSemaphore
 from os import major
 from typing import NewType, Tuple
 from PIL import Image, ImageOps
@@ -72,11 +73,15 @@ def convert_image(image: Image) -> str:
 
     return image_as_string, colors_of_image
 
+def bump_side(bump):
+    for _ in range(bump):
+        print(end=" ")
+
 # output converted image properly:
-def display_image(size: Tuple[int, int], image_string: str, colors: str, monochrome: bool, bump: int):
+def display_image(size: Tuple[int, int], image_string: str, colors: str, monochrome: bool, bump_down: int, bump_right: int):
     index = 0
 
-    for i in range(bump):
+    for i in range(bump_down):
         print()
 
     for _ in range(size[1]):
@@ -86,6 +91,7 @@ def display_image(size: Tuple[int, int], image_string: str, colors: str, monochr
         # print with color:
         line = image_string[index:index+size[0]*2]
         # flag = True
+        bump_side(bump_right) # bump image to the right, usually to center. 
         for loc,c in enumerate(line):
 
             if monochrome:
@@ -147,7 +153,7 @@ def main():
     img = img.resize((basewidth, hsize), Image.ANTIALIAS)
 
     monochrome = False
-    bump = 0  # how much to bump the image down (good for phone wallpapers)
+    bump_down, bump_right = 0,0  # how much to bump the image down (good for phone wallpapers)
 
     # print("LENGTH",len(argv))
     # for i,arg in enumerate(argv):
@@ -161,7 +167,10 @@ def main():
             if argv[4].strip().lower() == "true" or argv[4] == '1':
                 monochrome = True
             if len(argv) > 5:
-                bump = int(argv[5])
+                bump_down = int(argv[5])
+                if len(argv) > 6:
+                    bump_right = int(argv[6])
+            
     else:
         print("there ain't more args")
 
@@ -172,7 +181,7 @@ def main():
     ascii_image_string,colors = convert_image(img)
 
     # uncomment to display in terminal alone:
-    display_image(img.size, ascii_image_string, colors, monochrome, bump)
+    display_image(img.size, ascii_image_string, colors, monochrome, bump_down, bump_right)
 
     # save to html
     # save_html(image_to_be_converted, ascii_image_string, img.size)

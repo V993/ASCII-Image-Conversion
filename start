@@ -9,7 +9,10 @@ test ! -n "$3" && echo "     inverted   : False "
 test   -n "$4" && echo "     monochome  : $4"
 test ! -n "$4" && echo "     monochome  : False"
 
-test   -n "$5" && echo "     bump       : $5"
-test ! -n "$5" && echo "     bump       : 0"
+test   -n "$5" && echo "     bump_down  : $5"
+test ! -n "$5" && echo "     bump_down  : 0"
 
-python3 ascii_pictures.py $1 $2 $3 $4 $5
+test   -n "$6" && echo "     bump_right : $6"
+test ! -n "$6" && echo "     bump_right : 0"
+
+python3 ascii_pictures.py $1 $2 $3 $4 $5 $6
