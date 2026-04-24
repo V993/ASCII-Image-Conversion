@@ -29,11 +29,9 @@
 ### Using this REPO:
 The current project consists of a few python scripts which parse images and return ASCII images. 
 
-To use, clone the repo and run the following command in the root directory:
+To use, clone the repo and run the following command in the project root:
 
-./setup
-
-This will install all relevant dependencies.
+pip3 install pillow termcolor
 
 The only required arguments are the image and size, which will distort depending on your terminal size.
 
